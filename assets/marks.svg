@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" role="img" aria-labelledby="title desc">
+  <title id="title">Soniklair Markenformen</title>
+  <desc id="desc">Wortmarke, Bildmarke und Positionsmarke von Soniklair.</desc>
+  <rect width="900" height="280" fill="#faf7f2"/>
+
+  <g transform="translate(40, 50)">
+    <rect width="240" height="180" rx="8" fill="#ffffff" stroke="#ddd9d0"/>
+    <text x="24" y="100" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="48" font-weight="650" fill="#1a1a1a">Soniklair</text>
+    <text x="24" y="150" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#5c5c5c">Wortmarke</text>
+  </g>
+
+  <g transform="translate(330, 50)">
+    <rect width="180" height="180" rx="8" fill="#ffffff" stroke="#ddd9d0"/>
+    <g transform="translate(40, 24)">
+      <rect width="100" height="100" rx="50" fill="#1b3a2f"/>
+      <circle cx="50" cy="50" r="36" fill="none" stroke="#c8e6d4" stroke-width="6" stroke-dasharray="113 227" transform="rotate(-45 50 50)"/>
+      <path d="M32 62 C40 38 50 72 60 52 S78 48 85 65" fill="none" stroke="#e85d3b" stroke-width="5" stroke-linecap="round"/>
+    </g>
+    <text x="24" y="150" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#5c5c5c">Bildmarke</text>
+  </g>
+
+  <g transform="translate(560, 50)">
+    <rect width="300" height="180" rx="8" fill="#ffffff" stroke="#ddd9d0"/>
+    <g transform="translate(24, 24)">
+      <rect width="160" height="100" rx="8" fill="#1b3a2f"/>
+      <rect y="70" width="160" height="30" fill="#faf7f2"/>
+      <polygon points="0,100 40,60 40,100" fill="#e85d3b"/>
+      <polygon points="42,100 82,60 82,100" fill="#2d5a47"/>
+    </g>
+    <text x="24" y="150" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#5c5c5c">Positionsmarke</text>
+  </g>
+</svg>

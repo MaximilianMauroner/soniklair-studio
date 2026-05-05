@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Soniklair Studio Produktansicht</title>
+  <desc id="desc">Eine stilisierte Softwareoberfläche mit Audiowellenform, Transkript, Kapiteln und markiertem Clip.</desc>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#c8e6d4" stroke-opacity=".06" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="760" rx="12" fill="#faf7f2"/>
+  <rect x="40" y="40" width="1120" height="680" rx="8" fill="#1b3a2f"/>
+  <rect x="40" y="40" width="1120" height="680" rx="8" fill="url(#grid)"/>
+
+  <rect x="72" y="72" width="1056" height="64" rx="6" fill="#ffffff"/>
+  <circle cx="104" cy="104" r="8" fill="#e85d3b"/>
+  <circle cx="132" cy="104" r="8" fill="#d4a039"/>
+  <circle cx="160" cy="104" r="8" fill="#2d5a47"/>
+  <text x="196" y="112" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="20" font-weight="600" fill="#1a1a1a">Soniklair Studio</text>
+  <text x="980" y="112" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="15" font-weight="500" fill="#5c5c5c">Projekt: Market Call</text>
+
+  <rect x="72" y="168" width="520" height="240" rx="8" fill="#ffffff"/>
+  <text x="104" y="216" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="28" font-weight="600" fill="#1a1a1a">Transkript</text>
+  <rect x="104" y="248" width="420" height="8" rx="4" fill="#e6e0d5"/>
+  <rect x="104" y="276" width="360" height="8" rx="4" fill="#e6e0d5"/>
+  <rect x="104" y="304" width="400" height="8" rx="4" fill="#e6e0d5"/>
+  <rect x="104" y="332" width="280" height="8" rx="4" fill="#e85d3b"/>
+  <rect x="104" y="360" width="320" height="8" rx="4" fill="#e6e0d5"/>
+
+  <rect x="608" y="168" width="520" height="240" rx="8" fill="#c8e6d4"/>
+  <text x="640" y="216" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="28" font-weight="600" fill="#1a1a1a">Kapitel</text>
+  <g font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="17" font-weight="500" fill="#1b3a2f">
+    <text x="640" y="264"><tspan fill="#e85d3b" font-weight="600">01</tspan>  Intro &amp; Kontext</text>
+    <text x="640" y="304"><tspan fill="#e85d3b" font-weight="600">02</tspan>  Kundenbedarf</text>
+    <text x="640" y="344"><tspan fill="#e85d3b" font-weight="600">03</tspan>  Nächste Schritte</text>
+  </g>
+
+  <rect x="72" y="432" width="1056" height="256" rx="8" fill="#ffffff"/>
+  <text x="104" y="480" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="24" font-weight="600" fill="#1a1a1a">Clip: 04:21 – 05:06</text>
+
+  <path d="M104 580 C140 490 170 650 206 560 S270 540 306 590 370 470 406 570 470 640 506 540 570 490 606 580 670 620 706 530 770 485 806 570 870 630 906 540 970 490 1006 580 1070 620 1100 550" fill="none" stroke="#2d5a47" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="460" y="508" width="200" height="140" rx="8" fill="rgba(232, 93, 59, 0.12)"/>
+  <rect x="460" y="508" width="4" height="140" fill="#e85d3b"/>
+  <rect x="656" y="508" width="4" height="140" fill="#e85d3b"/>
+
+  <text x="1040" y="664" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="14" font-weight="500" fill="#5c5c5c">04:42</text>
+</svg>
