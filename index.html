@@ -84,7 +84,7 @@
           <p class="lead">Monatlich kündbar, digital bereitgestellt. Die aktuelle Website zeigt den Bestellablauf in vereinfachter Form direkt im Browser.</p>
         </div>
         <div class="pricing-grid">
-          <article class="price-card">
+          <article class="price-card" data-plan="Starter" data-price="19">
             <h3>Starter</h3>
             <p class="price">19 €<span>/Monat inkl. USt.</span></p>
             <ul>
@@ -93,9 +93,9 @@
               <li>20 Clip-Summaries</li>
             </ul>
             <p class="price-term">Monatliche Mindestlaufzeit, kündbar zum Monatsende.</p>
-            <button class="button primary" type="button">Paket wählen</button>
+            <button class="button primary add-plan" type="button">In den Warenkorb</button>
           </article>
-          <article class="price-card recommended">
+          <article class="price-card recommended" data-plan="Studio" data-price="49">
             <p class="badge">Empfohlen</p>
             <h3>Studio</h3>
             <p class="price">49 €<span>/Monat inkl. USt.</span></p>
@@ -105,9 +105,9 @@
               <li>200 Clip-Summaries</li>
             </ul>
             <p class="price-term">Monatliche Mindestlaufzeit, kündbar zum Monatsende.</p>
-            <button class="button primary" type="button">Paket wählen</button>
+            <button class="button primary add-plan" type="button">In den Warenkorb</button>
           </article>
-          <article class="price-card">
+          <article class="price-card" data-plan="Archive" data-price="129">
             <h3>Archive</h3>
             <p class="price">129 €<span>/Monat inkl. USt.</span></p>
             <ul>
@@ -116,21 +116,35 @@
               <li>Export und Audit-Log</li>
             </ul>
             <p class="price-term">Monatliche Mindestlaufzeit, kündbar zum Monatsende.</p>
-            <button class="button primary" type="button">Paket wählen</button>
+            <button class="button primary add-plan" type="button">In den Warenkorb</button>
           </article>
+        </div>
+        <div class="shop-legal-note">
+          <p>Alle Preise verstehen sich inklusive 20 Prozent österreichischer Umsatzsteuer. Für die digitale Bereitstellung fallen keine Versandkosten an.</p>
+          <p>Das Abo läuft monatlich und kann zum Ende jedes Abrechnungsmonats gekündigt werden. Die aktuelle Website bestätigt Bestellungen direkt im Browser und nutzt keine externe Zahlungsabwicklung.</p>
         </div>
         <aside class="checkout">
           <h3>Warenkorb</h3>
-          <p>Noch kein Paket ausgewählt.</p>
-          <form class="checkout-form">
+          <p class="checkout-demo-notice"><strong>Hinweis:</strong> Dies ist eine unverbindliche Demo-Bestellung. Es wird keine Zahlung ausgelöst und kein Vertrag geschlossen.</p>
+          <p id="cart-state">Noch kein Paket ausgewählt.</p>
+          <form class="checkout-form" id="checkout-form">
             <label for="email">E-Mail für Bestellbestätigung</label>
             <input id="email" name="email" type="email" autocomplete="email" required>
+            <div class="order-summary" id="order-summary" hidden>
+              <p class="order-summary-title">Bestellzusammenfassung</p>
+              <ul class="order-summary-list">
+                <li>Paket: <strong id="summary-plan">-</strong></li>
+                <li>Monatlicher Preis: <strong id="summary-price">-</strong> inkl. 20 % USt.</li>
+                <li>Mindestlaufzeit: monatlich, kündbar zum Monatsende</li>
+              </ul>
+            </div>
             <label class="checkbox">
               <input type="checkbox" required>
               <span>Ich akzeptiere die Lizenzbedingungen und habe die Datenschutzerklärung gelesen.</span>
             </label>
             <button class="button primary" type="submit">Demo-Bestellung absenden</button>
           </form>
+          <p class="form-message" id="order-message"></p>
         </aside>
       </section>
 
@@ -158,5 +172,6 @@
         <a href="privacy.html">Datenschutz</a>
       </nav>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

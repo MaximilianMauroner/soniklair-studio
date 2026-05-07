@@ -179,6 +179,11 @@ h3 {
   font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.button:hover {
+  background: var(--forest-light);
 }
 
 .hero-media {
@@ -298,9 +303,36 @@ h3 {
   font-size: 0.82rem;
 }
 
+.shop-legal-note {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.shop-legal-note p {
+  margin: 0 0 0.75rem;
+}
+
+.shop-legal-note p:last-child {
+  margin-bottom: 0;
+}
+
 .checkout {
   margin-top: 1.5rem;
   padding: 2rem;
+}
+
+.checkout-demo-notice {
+  margin: 0 0 1rem;
+  padding: 0.6rem 0.9rem;
+  background: var(--paper-2);
+  border-left: 3px solid #a47a2b;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.9rem;
 }
 
 .checkout-form {
@@ -336,6 +368,44 @@ input {
   width: 22px;
   min-height: 22px;
   margin-top: 0.1rem;
+}
+
+.order-summary {
+  padding: 1rem 1.1rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+}
+
+.order-summary-title {
+  margin: 0 0 0.6rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.order-summary-list {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.form-message {
+  min-height: 1.6rem;
+  padding: 0.75rem 1rem;
+  background: var(--mint);
+  border-radius: var(--radius);
+  color: var(--forest);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.form-message:empty {
+  display: none;
 }
 
 .compliance-grid {
