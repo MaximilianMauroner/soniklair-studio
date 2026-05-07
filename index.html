@@ -13,7 +13,8 @@
         <a class="brand" href="index.html">
           <span class="brand-mark"></span>Soniklair
         </a>
-        <div class="nav-links">
+        <button class="nav-toggle" type="button">Menü</button>
+        <div class="nav-links" id="nav-links">
           <a href="#produkt">Produkt</a>
           <a href="#shop">Preise</a>
           <a href="about.html">Unternehmen</a>
@@ -76,6 +77,15 @@
           <li>Produkt- und Sales-Teams, die Kundengespräche in Clips dokumentieren.</li>
           <li>Wissensarbeiter, die Audioarchive ohne manuelles Scrubbing verwenden.</li>
         </ul>
+      </section>
+
+      <section class="band media-panel">
+        <div>
+          <h2>Produktvorschau mit Signalansicht.</h2>
+          <p>Die Signalfläche zeigt, wie Soniklair längere Aufnahmen visuell strukturiert. Der Ton ist optional und startet nur nach einem Klick.</p>
+          <button class="button secondary" id="play-sound" type="button">Signalton testen</button>
+        </div>
+        <canvas id="signal-canvas" width="900" height="360"></canvas>
       </section>
 
       <section class="band shop" id="shop">
