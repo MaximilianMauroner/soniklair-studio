@@ -15,8 +15,8 @@
         </a>
         <button class="nav-toggle" type="button">Menü</button>
         <div class="nav-links" id="nav-links">
-          <a href="#produkt">Produkt</a>
-          <a href="#shop">Preise</a>
+          <a href="index.html#produkt">Produkt</a>
+          <a href="index.html#shop">Preise</a>
           <a href="about.html">Unternehmen</a>
           <a href="contact.html">Kontakt</a>
         </div>
@@ -29,17 +29,23 @@
           <h1>Durchsuchbare Transkripte für Teams, die mit Audio arbeiten.</h1>
           <p class="lead">Soniklair Studio wandelt Podcasts, Interviews, Vorlesungen und Meetings in strukturierte Transkripte mit Kapiteln, Fundstellen und teilbaren Clips um.</p>
           <div class="hero-actions">
-            <a class="button primary" href="#produkt">Produkt ansehen</a>
+            <a class="button primary" href="#shop">Preise ansehen</a>
+            <a class="button secondary" href="#preview">Produkt ansehen</a>
           </div>
+          <ul class="hero-meta">
+            <li><span>Standort</span>Wien, Österreich</li>
+            <li><span>Team</span>14 Mitarbeitende</li>
+            <li><span>Modell</span>Monatliche SaaS-Abos</li>
+          </ul>
         </div>
-        <figure class="hero-media">
+        <figure class="hero-media" id="preview">
           <img src="assets/soniklair-studio.svg" alt="Stilisierte Oberfläche von Soniklair Studio mit Transkript, Kapiteln und Clip-Auswahl" width="1200" height="760">
         </figure>
       </section>
 
       <section class="band product" id="produkt">
         <div class="section-heading">
-          <h2>Ein Arbeitsbereich vom Import bis zum Export.</h2>
+          <h2 id="produkt-title">Ein Arbeitsbereich vom Import bis zum Export.</h2>
           <p class="lead">Transkription, Strukturierung und Wiederverwendung laufen in einer Oberfläche zusammen. So bleibt Audio nicht nur archiviert, sondern tatsächlich nutzbar.</p>
         </div>
         <div class="feature-grid">
@@ -68,7 +74,7 @@
 
       <section class="band proof">
         <div>
-          <h2>Gebaut für Recherche, Lehre und Kundengespräche.</h2>
+          <h2 id="proof-title">Gebaut für Recherche, Lehre und Kundengespräche.</h2>
           <p>Soniklair richtet sich an Teams, die Aussagen aus langen Aufnahmen schnell wiederfinden, markieren und weiterverwenden müssen.</p>
         </div>
         <ul class="proof-list">
@@ -81,7 +87,7 @@
 
       <section class="band media-panel">
         <div>
-          <h2>Produktvorschau mit Signalansicht.</h2>
+          <h2 id="signal-title">Produktvorschau mit Signalansicht.</h2>
           <p>Die Signalfläche zeigt, wie Soniklair längere Aufnahmen visuell strukturiert. Der Ton ist optional und startet nur nach einem Klick.</p>
           <button class="button secondary" id="play-sound" type="button">Signalton testen</button>
         </div>
@@ -90,7 +96,7 @@
 
       <section class="band shop" id="shop">
         <div class="section-heading">
-          <h2>Pläne für Einzelpersonen und Teams.</h2>
+          <h2 id="shop-title">Pläne für Einzelpersonen und Teams.</h2>
           <p class="lead">Monatlich kündbar, digital bereitgestellt. Die aktuelle Website zeigt den Bestellablauf in vereinfachter Form direkt im Browser.</p>
         </div>
         <div class="pricing-grid">
@@ -102,7 +108,7 @@
               <li>Podcast-Import</li>
               <li>20 Clip-Summaries</li>
             </ul>
-            <p class="price-term">Monatliche Mindestlaufzeit, kündbar zum Monatsende.</p>
+            <p class="price-term">Monatliche Mindestlaufzeit · kündbar zum Monatsende · Gesamtkosten pro Abrechnungszeitraum: 19 € inkl. USt.</p>
             <button class="button primary add-plan" type="button">In den Warenkorb</button>
           </article>
           <article class="price-card recommended" data-plan="Studio" data-price="49">
@@ -114,7 +120,7 @@
               <li>Kapitel und Sprecherhinweise</li>
               <li>200 Clip-Summaries</li>
             </ul>
-            <p class="price-term">Monatliche Mindestlaufzeit, kündbar zum Monatsende.</p>
+            <p class="price-term">Monatliche Mindestlaufzeit · kündbar zum Monatsende · Gesamtkosten pro Abrechnungszeitraum: 49 € inkl. USt.</p>
             <button class="button primary add-plan" type="button">In den Warenkorb</button>
           </article>
           <article class="price-card" data-plan="Archive" data-price="129">
@@ -125,13 +131,14 @@
               <li>Team-Workspace</li>
               <li>Export und Audit-Log</li>
             </ul>
-            <p class="price-term">Monatliche Mindestlaufzeit, kündbar zum Monatsende.</p>
+            <p class="price-term">Monatliche Mindestlaufzeit · kündbar zum Monatsende · Gesamtkosten pro Abrechnungszeitraum: 129 € inkl. USt.</p>
             <button class="button primary add-plan" type="button">In den Warenkorb</button>
           </article>
         </div>
         <div class="shop-legal-note">
           <p>Alle Preise verstehen sich inklusive 20 Prozent österreichischer Umsatzsteuer. Für die digitale Bereitstellung fallen keine Versandkosten an.</p>
           <p>Das Abo läuft monatlich und kann zum Ende jedes Abrechnungsmonats gekündigt werden. Die aktuelle Website bestätigt Bestellungen direkt im Browser und nutzt keine externe Zahlungsabwicklung.</p>
+          <p>Bei echtem Sofortbeginn digitaler Leistungen müssten Rücktrittsrecht und ausdrückliche Zustimmung gesondert dokumentiert werden.</p>
         </div>
         <aside class="checkout">
           <h3>Warenkorb</h3>
@@ -143,16 +150,23 @@
             <div class="order-summary" id="order-summary" hidden>
               <p class="order-summary-title">Bestellzusammenfassung</p>
               <ul class="order-summary-list">
-                <li>Paket: <strong id="summary-plan">-</strong></li>
-                <li>Monatlicher Preis: <strong id="summary-price">-</strong> inkl. 20 % USt.</li>
+                <li>Paket: <strong id="summary-plan">–</strong></li>
+                <li>Monatlicher Preis: <strong id="summary-price">–</strong> inkl. 20 % USt., kein Versandkostenanteil</li>
                 <li>Mindestlaufzeit: monatlich, kündbar zum Monatsende</li>
+                <li>Leistungsbeginn: digitale Bereitstellung nach Vertragsschluss</li>
+                <li>Widerrufsrecht: 14 Tage; entfällt bei sofortigem digitalem Leistungsbeginn nur mit ausdrücklicher Zustimmung</li>
+                <li><a href="license.html">Lizenzbedingungen</a> · <a href="privacy.html">Datenschutz</a> · <a href="license.html#widerrufsbelehrung">Widerrufsbelehrung</a></li>
               </ul>
             </div>
             <label class="checkbox">
               <input type="checkbox" required>
-              <span>Ich akzeptiere die Lizenzbedingungen und habe die Datenschutzerklärung gelesen.</span>
+              <span>Ich akzeptiere die <a href="license.html">Lizenzbedingungen</a> und habe die <a href="privacy.html">Datenschutzerklärung</a> gelesen.</span>
             </label>
-            <button class="button primary" type="submit">Demo-Bestellung absenden</button>
+            <label class="checkbox">
+              <input type="checkbox" id="withdrawal-consent">
+              <span>Ich stimme dem sofortigen Beginn der digitalen Leistung zu und bestätige, dass ich weiß, dass damit mein Widerrufsrecht nach § 11 FAGG erlischt (bei einer echten kostenpflichtigen Bestellung; hier unverbindliche Demo).</span>
+            </label>
+            <button class="button primary" type="submit">Unverbindliche Demo-Bestellung absenden</button>
           </form>
           <p class="form-message" id="order-message"></p>
         </aside>
@@ -160,26 +174,30 @@
 
       <section class="band compliance">
         <div class="section-heading">
-          <h2>Mehr zu Soniklair.</h2>
-          <p class="lead">Unternehmen, Marke, Lizenz, Datenschutz und Kontakt werden auf eigenen Seiten ergänzt.</p>
+          <h2 id="compliance-title">Mehr zu Soniklair.</h2>
+          <p class="lead">Unternehmen, Marke, Lizenz, Datenschutz, Barrierefreiheit und Kontakt sind auf eigenen Seiten dokumentiert.</p>
         </div>
         <div class="compliance-grid">
           <a href="about.html">Unternehmen und Marke</a>
           <a href="license.html">Lizenzbedingungen</a>
           <a href="privacy.html">Datenschutz</a>
+          <a href="accessibility.html">Barrierefreiheit</a>
           <a href="contact.html">Kontakt</a>
+          <a href="impressum.html">Impressum</a>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>Soniklair Systems GmbH · Sitz Wien · Neubaugasse 44/3, 1070 Wien</p>
+      <p>Soniklair Systems GmbH · Sitz Wien · FN 987654 a · HG Wien · Neubaugasse 44/3, 1070 Wien</p>
       <nav>
         <a href="index.html">Startseite</a>
         <a href="about.html">Unternehmen</a>
         <a href="contact.html">Kontakt</a>
         <a href="license.html">Lizenz</a>
         <a href="privacy.html">Datenschutz</a>
+        <a href="accessibility.html">Barrierefreiheit</a>
+        <a href="impressum.html">Impressum</a>
       </nav>
     </footer>
     <script src="script.js"></script>

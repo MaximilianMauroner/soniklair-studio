@@ -2,12 +2,6 @@
   const navToggle = document.querySelector(".nav-toggle");
   const navLinks = document.querySelector("#nav-links");
   const navAnchors = document.querySelectorAll(".nav-links a");
-  const cartState = document.querySelector("#cart-state");
-  const orderMessage = document.querySelector("#order-message");
-  const orderSummary = document.querySelector("#order-summary");
-  const summaryPlan = document.querySelector("#summary-plan");
-  const summaryPrice = document.querySelector("#summary-price");
-  const selectedPlan = { name: "", price: 0 };
 
   if (navToggle && navLinks) {
     navToggle.addEventListener("click", () => {
@@ -21,11 +15,15 @@
     });
   }
 
+  const cartState = document.querySelector("#cart-state");
+  const orderMessage = document.querySelector("#order-message");
+  const selectedPlan = { name: "", price: 0 };
+
   function playClickTone() {
     if (!window.AudioContext && !window.webkitAudioContext) return;
-
     const AudioContextCtor = window.AudioContext || window.webkitAudioContext;
     const audioContext = new AudioContextCtor();
+
     const osc1 = audioContext.createOscillator();
     const osc2 = audioContext.createOscillator();
     const gain1 = audioContext.createGain();
@@ -34,6 +32,7 @@
     osc1.type = "sine";
     osc1.frequency.setValueAtTime(880, audioContext.currentTime);
     osc1.frequency.exponentialRampToValueAtTime(440, audioContext.currentTime + 0.15);
+
     osc2.type = "triangle";
     osc2.frequency.setValueAtTime(587, audioContext.currentTime);
     osc2.frequency.exponentialRampToValueAtTime(392, audioContext.currentTime + 0.2);
@@ -41,6 +40,7 @@
     gain1.gain.setValueAtTime(0.001, audioContext.currentTime);
     gain1.gain.exponentialRampToValueAtTime(0.08, audioContext.currentTime + 0.02);
     gain1.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.2);
+
     gain2.gain.setValueAtTime(0.001, audioContext.currentTime);
     gain2.gain.exponentialRampToValueAtTime(0.04, audioContext.currentTime + 0.03);
     gain2.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.25);
@@ -60,17 +60,19 @@
     }, 350);
   }
 
+  const orderSummary = document.querySelector("#order-summary");
+  const summaryPlan = document.querySelector("#summary-plan");
+  const summaryPrice = document.querySelector("#summary-price");
+
   function updateOrderSummary() {
     if (!orderSummary || !summaryPlan || !summaryPrice) return;
-
-    if (!selectedPlan.name) {
+    if (selectedPlan.name) {
+      summaryPlan.textContent = selectedPlan.name;
+      summaryPrice.textContent = `${selectedPlan.price} €`;
+      orderSummary.hidden = false;
+    } else {
       orderSummary.hidden = true;
-      return;
     }
-
-    summaryPlan.textContent = selectedPlan.name;
-    summaryPrice.textContent = `${selectedPlan.price} €`;
-    orderSummary.hidden = false;
   }
 
   document.querySelectorAll(".add-plan").forEach((button) => {
@@ -78,11 +80,9 @@
       const card = button.closest(".price-card");
       selectedPlan.name = card?.dataset.plan || "Paket";
       selectedPlan.price = Number(card?.dataset.price || 0);
-
       if (cartState) {
         cartState.textContent = `${selectedPlan.name} ausgewählt: ${selectedPlan.price} € pro Monat inkl. USt.`;
       }
-
       updateOrderSummary();
       playClickTone();
     });
@@ -92,18 +92,44 @@
   if (checkoutForm && orderMessage) {
     checkoutForm.addEventListener("submit", (event) => {
       event.preventDefault();
-
       if (!selectedPlan.name) {
         orderMessage.textContent = "Bitte wählen Sie zuerst ein Paket aus.";
         return;
       }
-
-      orderMessage.textContent = `Demo-Bestellung für ${selectedPlan.name} erfasst. Diese Website löst keine Zahlung aus.`;
+      const planName = selectedPlan.name;
+      orderMessage.textContent = `Eingangsbestätigung (Demo-Bestellung): Anfrage für ${planName} erfasst. Diese Website löst keine Zahlung aus. In einem echten Betrieb würde jetzt automatisch eine Eingangsbestätigung per E-Mail gemäß § 9 ECG versandt.`;
       checkoutForm.reset();
-      selectedPlan.name = "";
-      selectedPlan.price = 0;
-      if (cartState) cartState.textContent = "Noch kein Paket ausgewählt.";
-      updateOrderSummary();
+      if (orderSummary) orderSummary.hidden = true;
+    });
+  }
+
+  const contactForm = document.querySelector("#contact-form");
+  const contactMessage = document.querySelector("#contact-message");
+  if (contactForm && contactMessage) {
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      contactMessage.textContent = "Danke. Ihre Nachricht wurde bestätigt. Der serverseitige Versand ist auf dieser Website derzeit nicht aktiv.";
+      contactForm.reset();
+    });
+  }
+
+  const privacyForm = document.querySelector("#privacy-form");
+  const privacyMessage = document.querySelector("#privacy-message");
+  if (privacyForm && privacyMessage) {
+    const checkbox = document.querySelector("#analytics-consent");
+    privacyForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      privacyMessage.textContent = "Cookie-Einstellungen gespeichert.";
+    });
+  }
+
+  const deleteSettingsBtn = document.querySelector("#delete-settings");
+  if (deleteSettingsBtn) {
+    deleteSettingsBtn.addEventListener("click", () => {
+      const checkbox = document.querySelector("#analytics-consent");
+      if (checkbox) checkbox.checked = false;
+      const privMsg = document.querySelector("#privacy-message");
+      if (privMsg) privMsg.textContent = "Einstellungen zurückgesetzt.";
     });
   }
 
@@ -117,21 +143,25 @@
     const context = canvas.getContext("2d");
     let frame = 0;
 
-    function formatTime(seconds) {
-      const mins = Math.floor(seconds / 60) % 60;
-      const secs = Math.floor(seconds) % 60;
-      return `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
-    }
+    const colors = {
+      bg: "#1b3a2f",
+      grid: "rgba(200, 230, 212, 0.08)",
+      wave: "#c8e6d4",
+      highlight: "#e85d3b",
+      highlightBg: "rgba(232, 93, 59, 0.15)",
+      text: "#faf7f2",
+      textMuted: "#c8e6d4"
+    };
 
     function draw() {
       if (!context) return;
-
       const width = canvas.width;
       const height = canvas.height;
-      context.fillStyle = "#1b3a2f";
+
+      context.fillStyle = colors.bg;
       context.fillRect(0, 0, width, height);
 
-      context.strokeStyle = "rgba(200, 230, 212, 0.08)";
+      context.strokeStyle = colors.grid;
       context.lineWidth = 1;
       for (let x = 0; x < width; x += 40) {
         context.beginPath();
@@ -148,16 +178,18 @@
 
       const clipStart = width * 0.42;
       const clipEnd = width * 0.62;
-      context.fillStyle = "rgba(232, 93, 59, 0.15)";
+      context.fillStyle = colors.highlightBg;
       context.fillRect(clipStart, 60, clipEnd - clipStart, height - 120);
-      context.fillStyle = "#e85d3b";
+
+      context.fillStyle = colors.highlight;
       context.fillRect(clipStart, 60, 4, height - 120);
       context.fillRect(clipEnd - 4, 60, 4, height - 120);
 
-      context.strokeStyle = "#c8e6d4";
       context.lineWidth = 6;
       context.lineCap = "round";
       context.lineJoin = "round";
+
+      context.strokeStyle = colors.wave;
       context.beginPath();
       for (let x = 30; x < width - 30; x += 6) {
         const progress = x / width;
@@ -167,24 +199,33 @@
         const wave3 = Math.sin(progress * 8 + frame * 0.015) * 15;
         const envelope = Math.sin(progress * Math.PI) * 0.7 + 0.3;
         const y = height / 2 + (wave1 + wave2 + wave3) * envelope;
-
         if (x === 30) context.moveTo(x, y);
         else context.lineTo(x, y);
       }
       context.stroke();
 
-      context.fillStyle = "#faf7f2";
+      context.shadowColor = "transparent";
+      context.fillStyle = colors.text;
       context.font = "600 24px system-ui, sans-serif";
       context.fillText("Clip 04:21 – 05:06", 32, 44);
 
-      context.fillStyle = "#c8e6d4";
+      context.fillStyle = colors.textMuted;
       context.font = "500 16px system-ui, sans-serif";
       context.fillText("Transkript synchronisiert", 32, height - 28);
+
       context.font = "500 14px system-ui, sans-serif";
-      context.fillText(formatTime(frame * 0.016), width - 80, height - 28);
+      context.fillStyle = colors.textMuted;
+      const timeText = formatTime(frame * 0.016);
+      context.fillText(timeText, width - 80, height - 28);
 
       frame += 1;
       requestAnimationFrame(draw);
+    }
+
+    function formatTime(seconds) {
+      const mins = Math.floor(seconds / 60) % 60;
+      const secs = Math.floor(seconds) % 60;
+      return `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
     }
 
     draw();
