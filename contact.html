@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="de-AT">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kontakt | Soniklair</title>
+    <meta name="description" content="Kontaktseite von Soniklair Systems GmbH.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-page="contact">
+    <header class="site-header">
+      <nav class="nav">
+        <a class="brand" href="index.html"><span class="brand-mark"></span>Soniklair</a>
+        <button class="nav-toggle" type="button">Menü</button>
+        <div class="nav-links" id="nav-links">
+          <a href="index.html#produkt">Produkt</a>
+          <a href="index.html#shop">Preise</a>
+          <a href="about.html">Unternehmen</a>
+          <a href="contact.html">Kontakt</a>
+        </div>
+      </nav>
+    </header>
+    <main id="main" class="page">
+      <section class="band page-hero">
+        <h1>Kontakt.</h1>
+        <p class="lead">Für Produktfragen, Support, Barrierefreiheitsfeedback oder Datenschutzanliegen.</p>
+      </section>
+      <section class="band contact-layout">
+        <div class="contact-details">
+          <h2>Soniklair Systems GmbH</h2>
+          <p>Neubaugasse 44/3<br>1070 Wien<br>Österreich</p>
+          <p><a href="mailto:hello@soniklair.example">hello@soniklair.example</a><br><a href="tel:+43123456780">+43 1 234 567 80</a></p>
+          <p><a href="mailto:privacy@soniklair.example">privacy@soniklair.example</a><br><a href="mailto:accessibility@soniklair.example">accessibility@soniklair.example</a></p>
+          <p>Supportzeiten: Montag bis Freitag, 09:00 bis 17:00 Uhr.</p>
+        </div>
+        <form class="contact-form" id="contact-form" aria-labelledby="contact-form-title">
+          <h2 id="contact-form-title">Nachricht senden</h2>
+          <label for="name">Name</label>
+          <input id="name" name="name" autocomplete="name" required>
+          <label for="contact-email">E-Mail</label>
+          <input id="contact-email" name="email" type="email" autocomplete="email" required>
+          <label for="topic">Thema</label>
+          <select id="topic" name="topic">
+            <option>Produktberatung</option>
+            <option>Support</option>
+            <option>Lizenz</option>
+            <option>Datenschutz</option>
+            <option>Barrierefreiheit</option>
+          </select>
+          <label for="message">Nachricht</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+          <p class="form-note">Das Formular bestätigt Eingaben derzeit direkt im Browser. In einem produktiven Betrieb würden Anfragen serverseitig entgegengenommen und gemäß Datenschutzerklärung verarbeitet.</p>
+          <button class="button primary" type="submit">Nachricht bestätigen</button>
+          <p class="form-message" id="contact-message"></p>
+        </form>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <p>Soniklair Systems GmbH · Sitz Wien · FN 987654 a · HG Wien</p>
+      <nav>
+        <a href="index.html">Startseite</a>
+        <a href="about.html">Unternehmen</a>
+        <a href="contact.html">Kontakt</a>
+        <a href="license.html">Lizenz</a>
+        <a href="privacy.html">Datenschutz</a>
+        <a href="accessibility.html">Barrierefreiheit</a>
+        <a href="impressum.html">Impressum</a>
+      </nav>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
