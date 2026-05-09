@@ -19,6 +19,30 @@
   const orderMessage = document.querySelector("#order-message");
   const selectedPlan = { name: "", price: 0 };
 
+  function getStoredValue(key) {
+    try {
+      return localStorage.getItem(key);
+    } catch {
+      return null;
+    }
+  }
+
+  function setStoredValue(key, value) {
+    try {
+      localStorage.setItem(key, value);
+    } catch {
+      return;
+    }
+  }
+
+  function removeStoredValue(key) {
+    try {
+      localStorage.removeItem(key);
+    } catch {
+      return;
+    }
+  }
+
   function playClickTone() {
     if (!window.AudioContext && !window.webkitAudioContext) return;
     const AudioContextCtor = window.AudioContext || window.webkitAudioContext;
@@ -80,6 +104,7 @@
       const card = button.closest(".price-card");
       selectedPlan.name = card?.dataset.plan || "Paket";
       selectedPlan.price = Number(card?.dataset.price || 0);
+      setStoredValue("soniklair-plan", JSON.stringify(selectedPlan));
       if (cartState) {
         cartState.textContent = `${selectedPlan.name} ausgewählt: ${selectedPlan.price} € pro Monat inkl. USt.`;
       }
@@ -87,6 +112,19 @@
       playClickTone();
     });
   });
+
+  const storedPlan = getStoredValue("soniklair-plan");
+  if (storedPlan && cartState) {
+    try {
+      const plan = JSON.parse(storedPlan);
+      selectedPlan.name = plan.name;
+      selectedPlan.price = plan.price;
+      cartState.textContent = `${plan.name} ausgewählt: ${plan.price} € pro Monat inkl. USt.`;
+      updateOrderSummary();
+    } catch {
+      removeStoredValue("soniklair-plan");
+    }
+  }
 
   const checkoutForm = document.querySelector("#checkout-form");
   if (checkoutForm && orderMessage) {
@@ -117,19 +155,24 @@
   const privacyMessage = document.querySelector("#privacy-message");
   if (privacyForm && privacyMessage) {
     const checkbox = document.querySelector("#analytics-consent");
+    const storedConsent = getStoredValue("soniklair-analytics");
+    if (checkbox && storedConsent === "true") checkbox.checked = true;
     privacyForm.addEventListener("submit", (event) => {
       event.preventDefault();
-      privacyMessage.textContent = "Cookie-Einstellungen gespeichert.";
+      setStoredValue("soniklair-analytics", String(Boolean(checkbox?.checked)));
+      privacyMessage.textContent = "Cookie-Einstellungen lokal gespeichert.";
     });
   }
 
   const deleteSettingsBtn = document.querySelector("#delete-settings");
   if (deleteSettingsBtn) {
     deleteSettingsBtn.addEventListener("click", () => {
+      removeStoredValue("soniklair-plan");
+      removeStoredValue("soniklair-analytics");
       const checkbox = document.querySelector("#analytics-consent");
       if (checkbox) checkbox.checked = false;
       const privMsg = document.querySelector("#privacy-message");
-      if (privMsg) privMsg.textContent = "Einstellungen zurückgesetzt.";
+      if (privMsg) privMsg.textContent = "Alle lokalen Einstellungen wurden gelöscht.";
     });
   }
 
