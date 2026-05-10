@@ -9,10 +9,11 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   </head>
   <body data-page="license">
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
     <header class="site-header">
-      <nav class="nav">
-        <a class="brand" href="index.html"><span class="brand-mark"></span>Soniklair</a>
-        <button class="nav-toggle" type="button">Menü</button>
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Soniklair</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menü</button>
         <div class="nav-links" id="nav-links">
           <a href="index.html#produkt">Produkt</a>
           <a href="index.html#shop">Preise</a>
@@ -72,7 +73,7 @@
           <p>In einem produktiven Betrieb würde der Vertragstext (Lizenzbedingungen, Bestellbestätigung) nach Vertragsschluss elektronisch gespeichert und der Kundin oder dem Kunden per E-Mail sowie über den persönlichen Kundenbereich dauerhaft zugänglich gemacht. Der Kundin oder dem Kunden steht es frei, die Lizenzbedingungen vor Bestellung auszudrucken oder lokal zu speichern. Die aktuelle Mock-Website speichert keinen Vertragstext serverseitig.</p>
         </article>
       </section>
-      <section class="band media-license" id="widerrufsbelehrung">
+      <section class="band media-license" id="widerrufsbelehrung" aria-labelledby="withdrawal-title">
         <h2 id="withdrawal-title">Widerrufsbelehrung</h2>
         <div class="text-block">
           <p><strong>Widerrufsrecht:</strong> Sie haben das Recht, binnen 14 Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt 14 Tage ab dem Tag des Vertragsschlusses.</p>
@@ -92,7 +93,7 @@
           <p><em>(*) Unzutreffendes streichen.</em></p>
         </div>
       </section>
-      <section class="band media-license">
+      <section class="band media-license" aria-labelledby="profile-title">
         <h2 id="profile-title">Lizenzprofil des Softwarekaufs</h2>
         <table class="info-table">
           <caption>Beschränkungen und Reichweite der eingeräumten Nutzung</caption>
@@ -107,7 +108,7 @@
           </tbody>
         </table>
       </section>
-      <section class="band media-license">
+      <section class="band media-license" aria-labelledby="media-title">
         <h2 id="media-title">Medien- und Lizenzdokumentation</h2>
         <table class="info-table">
           <caption>Verwendete Medien dieser Website, Stand 14. Mai 2026</caption>
@@ -128,7 +129,7 @@
     </main>
     <footer class="site-footer">
       <p>Soniklair Systems GmbH · Sitz Wien · FN 987654 a · HG Wien</p>
-      <nav>
+      <nav aria-label="Footer Navigation">
         <a href="index.html">Startseite</a>
         <a href="about.html">Unternehmen</a>
         <a href="contact.html">Kontakt</a>

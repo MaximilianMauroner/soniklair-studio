@@ -9,10 +9,11 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   </head>
   <body data-page="about">
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
     <header class="site-header">
-      <nav class="nav">
-        <a class="brand" href="index.html"><span class="brand-mark"></span>Soniklair</a>
-        <button class="nav-toggle" type="button">Menü</button>
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Soniklair</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menü</button>
         <div class="nav-links" id="nav-links">
           <a href="index.html#produkt">Produkt</a>
           <a href="index.html#shop">Preise</a>
@@ -27,7 +28,7 @@
         <p class="lead">Soniklair Systems GmbH entwickelt in Wien Software, die Audioquellen in recherchierbares Wissen verwandelt.</p>
       </section>
 
-      <section class="band two-column">
+      <section class="band two-column" aria-labelledby="company-title">
         <div>
           <h2 id="company-title">Soniklair Systems GmbH</h2>
         </div>
@@ -40,7 +41,7 @@
         </div>
       </section>
 
-      <section class="band">
+      <section class="band" aria-labelledby="marks-title">
         <div class="section-heading">
           <h2 id="marks-title">Ein klar getrenntes Markensystem für Produkt und Kommunikation.</h2>
         </div>
@@ -72,7 +73,7 @@
         </div>
       </section>
 
-      <section class="band two-column">
+      <section class="band two-column" aria-labelledby="nice-title">
         <div>
           <h2 id="nice-title">Passende Klassen für Software und digitale Dienste.</h2>
         </div>
@@ -88,7 +89,7 @@
         </table>
       </section>
 
-      <section class="band two-column">
+      <section class="band two-column" aria-labelledby="clearance-title">
         <div>
           <h2 id="clearance-title">Prüfung auf Verwechselbarkeit.</h2>
         </div>
@@ -106,7 +107,7 @@
     </main>
     <footer class="site-footer">
       <p>Soniklair Systems GmbH · Sitz Wien · FN 987654 a · HG Wien</p>
-      <nav>
+      <nav aria-label="Footer Navigation">
         <a href="index.html">Startseite</a>
         <a href="about.html">Unternehmen</a>
         <a href="contact.html">Kontakt</a>

@@ -5,15 +5,34 @@
 
   if (navToggle && navLinks) {
     navToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("is-open");
+      const isOpen = navLinks.classList.toggle("is-open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
     });
 
     navAnchors.forEach((link) => {
       link.addEventListener("click", () => {
         navLinks.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
       });
     });
   }
+
+  const page = document.body.dataset.page;
+  navAnchors.forEach((link) => {
+    const href = link.getAttribute("href") || "";
+    const map = {
+      home: "index.html",
+      about: "about.html",
+      license: "license.html",
+      privacy: "privacy.html",
+      accessibility: "accessibility.html",
+      contact: "contact.html",
+      impressum: "impressum.html",
+    };
+    if (page && map[page] && href === map[page]) {
+      link.setAttribute("aria-current", "page");
+    }
+  });
 
   const cartState = document.querySelector("#cart-state");
   const orderMessage = document.querySelector("#order-message");
@@ -184,6 +203,7 @@
   const canvas = document.querySelector("#signal-canvas");
   if (canvas) {
     const context = canvas.getContext("2d");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let frame = 0;
 
     const colors = {
@@ -261,8 +281,10 @@
       const timeText = formatTime(frame * 0.016);
       context.fillText(timeText, width - 80, height - 28);
 
-      frame += 1;
-      requestAnimationFrame(draw);
+      if (!prefersReducedMotion) {
+        frame += 1;
+        requestAnimationFrame(draw);
+      }
     }
 
     function formatTime(seconds) {

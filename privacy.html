@@ -9,10 +9,11 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   </head>
   <body data-page="privacy">
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
     <header class="site-header">
-      <nav class="nav">
-        <a class="brand" href="index.html"><span class="brand-mark"></span>Soniklair</a>
-        <button class="nav-toggle" type="button">Menü</button>
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Soniklair</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menü</button>
         <div class="nav-links" id="nav-links">
           <a href="index.html#produkt">Produkt</a>
           <a href="index.html#shop">Preise</a>
@@ -84,7 +85,7 @@
           <p>E-Mail-Adresse und Pflichtfelder im Checkout oder Kontaktformular sind erforderlich, um eine Bestellung oder Anfrage zu erfassen. Ohne diese Angaben kann die jeweilige Funktion nicht bestätigt werden.</p>
         </article>
       </section>
-      <section class="band cookie-settings">
+      <section class="band cookie-settings" aria-labelledby="cookie-title">
         <h2 id="cookie-title">Cookie-Einstellungen</h2>
         <form id="privacy-form" class="settings-form">
           <label class="checkbox">
@@ -99,12 +100,12 @@
           <button class="button secondary" id="delete-settings" type="button">Alle Einstellungen löschen</button>
         </form>
         <p class="settings-retention">Lokale Einstellungen bleiben bis zur aktiven Löschung über diese Seite oder bis zur Browser-Bereinigung gespeichert. Es gibt kein automatisches Ablaufdatum.</p>
-        <p class="form-message" id="privacy-message"></p>
+        <p class="form-message" id="privacy-message" role="status"></p>
       </section>
     </main>
     <footer class="site-footer">
       <p>Soniklair Systems GmbH · Sitz Wien · FN 987654 a · HG Wien</p>
-      <nav>
+      <nav aria-label="Footer Navigation">
         <a href="index.html">Startseite</a>
         <a href="about.html">Unternehmen</a>
         <a href="contact.html">Kontakt</a>

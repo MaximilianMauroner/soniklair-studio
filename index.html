@@ -9,12 +9,13 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   </head>
   <body data-page="home">
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
     <header class="site-header">
-      <nav class="nav">
-        <a class="brand" href="index.html">
-          <span class="brand-mark"></span>Soniklair
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a class="brand" href="index.html" aria-label="Soniklair Startseite">
+          <span class="brand-mark" aria-hidden="true"></span>Soniklair
         </a>
-        <button class="nav-toggle" type="button">Menü</button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menü</button>
         <div class="nav-links" id="nav-links">
           <a href="index.html#produkt">Produkt</a>
           <a href="index.html#shop">Preise</a>
@@ -29,11 +30,11 @@
         <div class="hero-copy">
           <h1>Durchsuchbare Transkripte für Teams, die mit Audio arbeiten.</h1>
           <p class="lead">Soniklair Studio wandelt Podcasts, Interviews, Vorlesungen und Meetings in strukturierte Transkripte mit Kapiteln, Fundstellen und teilbaren Clips um.</p>
-          <div class="hero-actions">
+          <div class="hero-actions" aria-label="Produktaktionen">
             <a class="button primary" href="#shop">Preise ansehen</a>
             <a class="button secondary" href="#preview">Produkt ansehen</a>
           </div>
-          <ul class="hero-meta">
+          <ul class="hero-meta" aria-label="Unternehmensdaten">
             <li><span>Standort</span>Wien, Österreich</li>
             <li><span>Team</span>14 Mitarbeitende</li>
             <li><span>Modell</span>Monatliche SaaS-Abos</li>
@@ -44,7 +45,7 @@
         </figure>
       </section>
 
-      <section class="band product" id="produkt">
+      <section class="band product" id="produkt" aria-labelledby="produkt-title">
         <div class="section-heading">
           <h2 id="produkt-title">Ein Arbeitsbereich vom Import bis zum Export.</h2>
           <p class="lead">Transkription, Strukturierung und Wiederverwendung laufen in einer Oberfläche zusammen. So bleibt Audio nicht nur archiviert, sondern tatsächlich nutzbar.</p>
@@ -73,7 +74,7 @@
         </div>
       </section>
 
-      <section class="band proof">
+      <section class="band proof" aria-labelledby="proof-title">
         <div>
           <h2 id="proof-title">Gebaut für Recherche, Lehre und Kundengespräche.</h2>
           <p>Soniklair richtet sich an Teams, die Aussagen aus langen Aufnahmen schnell wiederfinden, markieren und weiterverwenden müssen.</p>
@@ -86,16 +87,16 @@
         </ul>
       </section>
 
-      <section class="band media-panel">
+      <section class="band media-panel" aria-labelledby="signal-title">
         <div>
           <h2 id="signal-title">Produktvorschau mit Signalansicht.</h2>
           <p>Die Signalfläche zeigt, wie Soniklair längere Aufnahmen visuell strukturiert. Der Ton ist optional und startet nur nach einem Klick.</p>
           <button class="button secondary" id="play-sound" type="button">Signalton testen</button>
         </div>
-        <canvas id="signal-canvas" width="900" height="360"></canvas>
+        <canvas id="signal-canvas" width="900" height="360" role="img" aria-label="Animierte Audiowellenform als Produktvisualisierung"></canvas>
       </section>
 
-      <section class="band shop" id="shop">
+      <section class="band shop" id="shop" aria-labelledby="shop-title">
         <div class="section-heading">
           <h2 id="shop-title">Pläne für Einzelpersonen und Teams.</h2>
           <p class="lead">Monatlich kündbar, digital bereitgestellt. Die aktuelle Website zeigt den Bestellablauf in vereinfachter Form direkt im Browser.</p>
@@ -136,19 +137,19 @@
             <button class="button primary add-plan" type="button">In den Warenkorb</button>
           </article>
         </div>
-        <div class="shop-legal-note">
+        <div class="shop-legal-note" aria-label="Bestellinformationen">
           <p>Alle Preise verstehen sich inklusive 20 Prozent österreichischer Umsatzsteuer. Für die digitale Bereitstellung fallen keine Versandkosten an.</p>
           <p>Das Abo läuft monatlich und kann zum Ende jedes Abrechnungsmonats gekündigt werden. Die aktuelle Website bestätigt Bestellungen direkt im Browser und nutzt keine externe Zahlungsabwicklung.</p>
           <p>Bei echtem Sofortbeginn digitaler Leistungen müssten Rücktrittsrecht und ausdrückliche Zustimmung gesondert dokumentiert werden.</p>
         </div>
-        <aside class="checkout">
+        <aside class="checkout" aria-live="polite">
           <h3>Warenkorb</h3>
           <p class="checkout-demo-notice"><strong>Hinweis:</strong> Dies ist eine unverbindliche Demo-Bestellung. Es wird keine Zahlung ausgelöst und kein Vertrag geschlossen.</p>
-          <p id="cart-state">Noch kein Paket ausgewählt.</p>
+          <p id="cart-state" role="status">Noch kein Paket ausgewählt.</p>
           <form class="checkout-form" id="checkout-form">
             <label for="email">E-Mail für Bestellbestätigung</label>
             <input id="email" name="email" type="email" autocomplete="email" required>
-            <div class="order-summary" id="order-summary" hidden>
+            <div class="order-summary" id="order-summary" hidden aria-label="Bestellzusammenfassung">
               <p class="order-summary-title">Bestellzusammenfassung</p>
               <ul class="order-summary-list">
                 <li>Paket: <strong id="summary-plan">–</strong></li>
@@ -169,11 +170,11 @@
             </label>
             <button class="button primary" type="submit">Unverbindliche Demo-Bestellung absenden</button>
           </form>
-          <p class="form-message" id="order-message"></p>
+          <p class="form-message" id="order-message" role="status"></p>
         </aside>
       </section>
 
-      <section class="band compliance">
+      <section class="band compliance" aria-labelledby="compliance-title">
         <div class="section-heading">
           <h2 id="compliance-title">Mehr zu Soniklair.</h2>
           <p class="lead">Unternehmen, Marke, Lizenz, Datenschutz, Barrierefreiheit und Kontakt sind auf eigenen Seiten dokumentiert.</p>
@@ -191,7 +192,7 @@
 
     <footer class="site-footer">
       <p>Soniklair Systems GmbH · Sitz Wien · FN 987654 a · HG Wien · Neubaugasse 44/3, 1070 Wien</p>
-      <nav>
+      <nav aria-label="Footer Navigation">
         <a href="index.html">Startseite</a>
         <a href="about.html">Unternehmen</a>
         <a href="contact.html">Kontakt</a>

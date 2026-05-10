@@ -28,6 +28,10 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
 body {
   margin: 0;
   background: var(--paper);
@@ -54,6 +58,30 @@ a {
 a:hover {
   color: var(--coral);
   text-decoration-color: var(--coral);
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 100;
+  transform: translateY(-200%);
+  background: var(--ink);
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
 }
 
 .site-header {

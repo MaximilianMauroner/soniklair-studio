@@ -9,10 +9,11 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   </head>
   <body data-page="contact">
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
     <header class="site-header">
-      <nav class="nav">
-        <a class="brand" href="index.html"><span class="brand-mark"></span>Soniklair</a>
-        <button class="nav-toggle" type="button">Menü</button>
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Soniklair</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menü</button>
         <div class="nav-links" id="nav-links">
           <a href="index.html#produkt">Produkt</a>
           <a href="index.html#shop">Preise</a>
@@ -26,7 +27,7 @@
         <h1>Kontakt.</h1>
         <p class="lead">Für Produktfragen, Support, Barrierefreiheitsfeedback oder Datenschutzanliegen.</p>
       </section>
-      <section class="band contact-layout">
+      <section class="band contact-layout" aria-labelledby="contact-form-title">
         <div class="contact-details">
           <h2>Soniklair Systems GmbH</h2>
           <p>Neubaugasse 44/3<br>1070 Wien<br>Österreich</p>
@@ -52,13 +53,13 @@
           <textarea id="message" name="message" rows="6" required></textarea>
           <p class="form-note">Das Formular bestätigt Eingaben derzeit direkt im Browser. In einem produktiven Betrieb würden Anfragen serverseitig entgegengenommen und gemäß Datenschutzerklärung verarbeitet.</p>
           <button class="button primary" type="submit">Nachricht bestätigen</button>
-          <p class="form-message" id="contact-message"></p>
+          <p class="form-message" id="contact-message" role="status"></p>
         </form>
       </section>
     </main>
     <footer class="site-footer">
       <p>Soniklair Systems GmbH · Sitz Wien · FN 987654 a · HG Wien</p>
-      <nav>
+      <nav aria-label="Footer Navigation">
         <a href="index.html">Startseite</a>
         <a href="about.html">Unternehmen</a>
         <a href="contact.html">Kontakt</a>
