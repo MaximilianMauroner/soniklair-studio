@@ -515,6 +515,10 @@ figcaption {
   font-weight: 700;
 }
 
+.price-card.recommended li::before {
+  color: var(--forest);
+}
+
 .price-term {
   margin: 0 0 1rem;
   color: var(--muted);
