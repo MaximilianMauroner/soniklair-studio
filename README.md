@@ -13,7 +13,7 @@ Aufgabe 0 - Vorbereitung
         Standort
         Anzahl der Mitarbeiter
         …
-    Definieren Sie das Geschäftsmodell (z. B. Abo, Einmalverkauf, Freemium)"
+    Definieren Sie das Geschäftsmodell (z. B. Abo, Einmalverkauf, Freemium)“
 
 Entwickeln Sie als nächstes einen Webshop, der die folgende Aspekte berücksichtigt:
 
@@ -40,7 +40,7 @@ Aufgabe 3 - Marke
 
     Designen Sie drei unterschiedliche Markenformen 
     (Wortmarke + Wortbildmarke gelten als redundant und zählen daher nur als eine Markenform.)
-    Erstellen Sie eine „About us" Seite, die Ihre Marken und deren Bedeutung erklärt.
+    Erstellen Sie eine „About us“ Seite, die Ihre Marken und deren Bedeutung erklärt.
     Ordnen Sie Ihre Marken der passenden Nizza-Klassen zu.
     Stellen Sie sicher, dass Sie kein Markenrecht verletzen. Achten Sie insbesondere auf die
         Wortwahl
@@ -53,7 +53,7 @@ Aufgabe 3 - Marke
 
 Aufgabe 4 - Lizenz
 
-    Erstellen Sie eine „Lizenz" Seite
+    Erstellen Sie eine „Lizenz“ Seite
     Definieren Sie welche Nutzungsrechte durch den Kauf erworben werden
     Definieren Sie welche Rechte beim Unternehmen verbleiben
     Formulieren Sie Haftungsbeschränkungen, um Ihre eigene Haftung angemessen zu reduzieren.
