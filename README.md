@@ -1,3 +1,4 @@
+URL: https://maximilianmauroner.github.io/soniklair-studio/
 Sie sind der Eigentümer eines Start-Ups und vertreiben Software über einen Webshop im Internet.
 
 Im Rahmen dieser Übung, entwickeln Sie einen Webshop für Ihr Start-Up.
